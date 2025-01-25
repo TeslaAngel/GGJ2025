@@ -88,3 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ec83df02bfd40448a4f2f5519e9d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardType: 0
+  bubblePrefab: {fileID: 2934384177742513648, guid: a91233ad75d4bec40ac27ea86b7dde34,
+    type: 3}
