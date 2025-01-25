@@ -10,18 +10,15 @@ public class CardSystem : MonoBehaviour, IPointerDownHandler
     public int cardType;
     private bool dragging = false;
 
+    [Space]
+    public GameObject bubblePrefab;
+
     public void OnPointerDown(PointerEventData eventData)
     {
         if (eventData.button == 0)
         {
             dragging = true;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -40,7 +37,11 @@ public class CardSystem : MonoBehaviour, IPointerDownHandler
                     if(hit.transform.tag == "Engine")
                     {
                         //check if engine is empty, if yes, implement this card's bubble to the engine and destroy this card
-                        
+                        if (hit.transform.GetComponent<EngineCode>().bubble == null)
+                        {
+                            hit.transform.GetComponent<EngineCode>().bubble = Instantiate(bubblePrefab, hit.transform.GetComponent<EngineCode>().bubblePlacer.position, hit.transform.GetComponent<EngineCode>().bubblePlacer.rotation, hit.transform);
+                            Destroy(gameObject);
+                        }
                     }
                 }
             }
