@@ -22,6 +22,6 @@ public class EnemyMovement : MonoBehaviour
     
     void MoveEnemy()
     {
-        transform.Translate(speed * Time.deltaTime * Vector3.back);
+        transform.Translate(speed * Time.deltaTime * Vector3.right);
     }
 }

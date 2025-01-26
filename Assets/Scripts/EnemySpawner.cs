@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public float speed;
     private Vector2 screenBounds;
-    float spawnInterval = 5f;
+    float spawnInterval = 3f;
     float spawnTimer = 0;
 
     public ShipManager shipManager;
@@ -24,21 +24,26 @@ public class EnemySpawner : MonoBehaviour
         if (Time.time - spawnTimer > spawnInterval)
         {
             spawnTimer = Time.time;
-            SpawnEnemy();
+            for (int i = 0; i < shipManager.lanePositions.Length; i++) {
+                int coinFlip = Random.Range(0, 2);
+                if (coinFlip == 1) {
+                    SpawnEnemy(i);
+                }
+            }
         }
         
         //if (Input.GetKeyDown(KeyCode.Space))
         
     }
-    void SpawnEnemy()
+    void SpawnEnemy(int laneIndex)
     {
         GameObject enemy = Instantiate(enemyPrefab) as GameObject;
-        int laneIndex = Random.Range(0, shipManager.lanePositions.Length);
+        // int laneIndex = Random.Range(0, shipManager.lanePositions.Length);
         Vector3 enemryLanePosition = shipManager.lanePositions[laneIndex];
         // TODO spawn slgihtly beyond camera view plane
         enemryLanePosition.z = shipManager.transform.position.z + 20;
         enemy.transform.position = enemryLanePosition;
-        Rigidbody enemyRigidBody = enemy.AddComponent<Rigidbody>();
-        EnemyMovement enemyMovement = enemy.AddComponent<EnemyMovement>();
+    
+        Destroy(enemy, 10f);
     }
 }
