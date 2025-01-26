@@ -16,9 +16,10 @@ public class CameraShake : MonoBehaviour
         
         while (elapsed < duration)
         {
-            float y = Random.Range(-10f, 10f) * magnitude;
+            float deltaX = Random.Range(-10f, 10f) * magnitude;
 
-            transform.localEulerAngles = new Vector3(ogLocalEulerAngles.x, y, ogLocalEulerAngles.z);
+            Vector3 newLocalEulerAngles = new Vector3(ogLocalEulerAngles.x + deltaX, ogLocalEulerAngles.y, ogLocalEulerAngles.z);
+            transform.localEulerAngles = Vector3.Lerp(ogLocalEulerAngles, newLocalEulerAngles, 2);
             elapsed += Time.deltaTime;
             yield return 0;
         }
