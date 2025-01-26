@@ -39,7 +39,7 @@ public class CardSystem : MonoBehaviour, IPointerDownHandler
                     if (hit.transform.gameObject.tag == "Engine")
                     {
                         //check if engine is empty, if yes, implement this card's bubble to the engine and destroy this card
-                        if (hit.transform.GetComponent<EngineCode>().bubble == null)
+                        if (!hit.transform.GetComponent<EngineCode>().bubble)
                         {
                             hit.transform.GetComponent<EngineCode>().bubble = Instantiate(bubblePrefab, hit.transform.GetComponent<EngineCode>().bubblePlacer.position, hit.transform.GetComponent<EngineCode>().bubblePlacer.rotation, hit.transform);
                             Destroy(gameObject);

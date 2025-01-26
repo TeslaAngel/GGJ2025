@@ -5,6 +5,26 @@ using UnityEngine;
 public class BubbleCode : MonoBehaviour
 {
     public int bubbleType; //0 = sample, 1 = light, 2 = heavy, 3 = speed, 4 = slow, 5 = TNT
+    public float lifeTime = 15;
+    private float lifeTimeTimer;
+    private Vector3 originalScale;
+
+    private void Start()
+    {
+        lifeTimeTimer = 1.25f * lifeTime;
+        originalScale = transform.localScale;
+    }
+
+    private void Update()
+    {
+        lifeTimeTimer -= Time.deltaTime;
+        transform.localScale = originalScale * (lifeTimeTimer / lifeTime);
+        
+        if(lifeTimeTimer / lifeTime <= 0.2f)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
