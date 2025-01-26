@@ -14,25 +14,55 @@ public class ShipManager : MonoBehaviour
     [Space]
     public float turningRotationAngle;
     public float turningSpeed;
+    public float switchLaneSpeed;
+
+    [Space]
+    public Vector3[] lanePositions;
+    public int currentLane = 0;
+
+    private bool switchedLane = false; //use this to avoid continuous lane switch
+
+    private void Start()
+    {
+        //put player in 0 or 1 lane (top or middle)
+        if(lanePositions.Length > 0)
+        {
+            transform.position = lanePositions[0];
+            currentLane = 0;
+        }
+        if (lanePositions.Length > 1)
+        {
+            transform.position = lanePositions[1];
+            currentLane = 1;
+        }
+    }
 
     private void Update()
     {
         //execute lane shift under the 3 lane setting, work for both keyboard and controller
-        if (Input.GetAxis("Vertical") > 0.5f)
+        if (Input.GetAxis("Vertical") > 0.3f)
         {
             //gradually rotate to the left
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, turningRotationAngle), turningSpeed * Time.deltaTime);
 
-            //move left according to rotation angle
-
+            //switch to left (upper) lane
+            if (Input.GetAxis("Vertical") > 0.5f && !switchedLane && currentLane>0)
+            {
+                switchedLane = true;
+                currentLane--;
+            }
         }
-        else if (Input.GetAxis("Vertical") < -0.5f)
+        else if (Input.GetAxis("Vertical") < -0.3f)
         {
             //gradually rotate to the right
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0f, 0f, -turningRotationAngle), turningSpeed * Time.deltaTime);
 
-            //move right according to rotation angle
-
+            //switch to right (lower) lane
+            if (Input.GetAxis("Vertical") < -0.5f && !switchedLane && currentLane < lanePositions.Length-1)
+            {
+                switchedLane = true;
+                currentLane++;
+            }
         }
         else
         {
@@ -41,6 +71,15 @@ public class ShipManager : MonoBehaviour
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, turningSpeed * Time.deltaTime);
             }
+
+            switchedLane = false;
+        }
+
+        
+        //always align to lane position
+        if(lanePositions.Length > 0)
+        {
+            transform.position = Vector3.Lerp(transform.position, lanePositions[currentLane], switchLaneSpeed * Time.deltaTime);
         }
 
 
@@ -58,6 +97,7 @@ public class ShipManager : MonoBehaviour
                     case 2: //heavy bubble
                         //GetComponent<Rigidbody>().AddForce(Vector3.down * heavyBubbleForce * Time.deltaTime);
                         break;
+
                     case 3: //speed bubble
                         //GetComponent<Rigidbody>().AddForce(Vector3.forward * fastBubbleForce * Time.deltaTime);
                         break;
