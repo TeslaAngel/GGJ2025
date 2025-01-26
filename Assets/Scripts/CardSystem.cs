@@ -15,6 +15,7 @@ public class CardSystem : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        Debug.Log("1");
         if (eventData.button == 0)
         {
             dragging = true;
@@ -33,8 +34,9 @@ public class CardSystem : MonoBehaviour, IPointerDownHandler
                 RaycastHit hit;
                 if (Physics.Raycast(worldRay, out hit))
                 {
+                    Debug.Log("2"+ hit.transform.tag);
                     //if player has dragged this card to an bubble engine
-                    if(hit.transform.tag == "Engine")
+                    if (hit.transform.gameObject.tag == "Engine")
                     {
                         //check if engine is empty, if yes, implement this card's bubble to the engine and destroy this card
                         if (hit.transform.GetComponent<EngineCode>().bubble == null)
