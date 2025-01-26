@@ -278,13 +278,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51900742}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.3535534, y: -0.61237246, z: 0.3535534, w: 0.61237246}
+  m_LocalPosition: {x: 12, y: 15, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: -90, z: 0}
 --- !u!114 &51900746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628abd5966f2a469783dbba7126bca38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothness: 0.1
+  smoothness: 0
   targetObject: {fileID: 8873960914696991387}
 --- !u!1 &409755556
 GameObject:
@@ -800,27 +800,27 @@ PrefabInstance:
     - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
       propertyPath: lanePositions.Array.data[0].x
-      value: -12
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
       propertyPath: lanePositions.Array.data[0].z
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
       propertyPath: lanePositions.Array.data[1].z
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
       propertyPath: lanePositions.Array.data[2].x
-      value: 12
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
       propertyPath: lanePositions.Array.data[2].z
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6940580797030752109, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
