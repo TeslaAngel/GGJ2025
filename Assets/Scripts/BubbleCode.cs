@@ -11,7 +11,7 @@ public class BubbleCode : MonoBehaviour
 
     private void Start()
     {
-        lifeTimeTimer = 1.25f * lifeTime;
+        lifeTimeTimer = 2f * lifeTime;
         originalScale = transform.localScale;
     }
 
@@ -20,7 +20,7 @@ public class BubbleCode : MonoBehaviour
         lifeTimeTimer -= Time.deltaTime;
         transform.localScale = originalScale * (lifeTimeTimer / lifeTime);
         
-        if(lifeTimeTimer / lifeTime <= 0.2f)
+        if(lifeTimeTimer / lifeTime <= 0.5f)
         {
             Destroy(gameObject);
         }
