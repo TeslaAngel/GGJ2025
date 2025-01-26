@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private Rigidbody rb;
-    public float speed;
+    public float speed = 10;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
 
     }
     // Update is called once per frame
@@ -21,10 +22,6 @@ public class EnemyMovement : MonoBehaviour
     
     void MoveEnemy()
     {
-        //gameObject.transform.Translate(Vector3.up * speed * Time.deltaTime);
-        //this.transform.Translate(0, 0, speed * Time.deltaTime);
-        Vector3 tempVect = new Vector3(0, 0, 2);
-        tempVect = tempVect.normalized * speed * Time.deltaTime;
-        rb.MovePosition(transform.position + tempVect);
+        transform.Translate(speed * Time.deltaTime * Vector3.back);
     }
 }
