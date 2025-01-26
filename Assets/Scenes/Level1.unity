@@ -768,7 +768,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleCards:
-  - {fileID: 7593788905400491244, guid: 1a2e459c9d3fd35478870d6f3f184026, type: 3}
+  - {fileID: 7593788905400491244, guid: 9bceb4ceaf21dca4d8f8e0223268526a, type: 3}
+  - {fileID: 7593788905400491244, guid: 82fdd065f2865324f9146772392c48a6, type: 3}
+  - {fileID: 7593788905400491244, guid: ae200d5b5a9ff464ebeaa838f2f87eaf, type: 3}
+  - {fileID: 7593788905400491244, guid: d79d6fb9b68c994499ab722f271d3888, type: 3}
+  - {fileID: 7593788905400491244, guid: 0ad661312f6150a45ab118ca0d193a63, type: 3}
   cardsInDeck: []
   maxCardCount: 6
   rollCardInterval: 10
