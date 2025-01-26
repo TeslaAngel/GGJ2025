@@ -33,6 +33,7 @@ public class BubbleCode : MonoBehaviour
     {
         //destroy the bubble when being hit by spiky enemy
     }
+    
 
     private void OnDestroy()
     {
