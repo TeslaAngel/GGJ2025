@@ -26,6 +26,9 @@ public class ShipManager : MonoBehaviour
 
     private bool switchedLane = false; //use this to avoid continuous lane switch
 
+    [Space]
+    public RGBPanel rgbPanel;
+
     private void Start()
     {
         //put player in 0 or 1 lane (top or middle)
@@ -167,6 +170,11 @@ public class ShipManager : MonoBehaviour
             body.useGravity = true;
             body.constraints = RigidbodyConstraints.None;
 
+            if(rgbPanel && !rgbPanel.activate)
+            {
+                rgbPanel.activate = true;
+            } 
+
         }
         //swing
         if(unstableTimer <= 0f)
@@ -192,6 +200,8 @@ public class ShipManager : MonoBehaviour
             BubbleCode[] bubbleCodes = GetComponentsInChildren<BubbleCode>();
             int bubbleIndex = Random.Range(0, bubbleCodes.Length);
             Destroy(bubbleCodes[bubbleIndex].gameObject);
+            CameraShake cameraShake = Camera.main.GetComponent<CameraShake>();
+            StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
         }
     }
 }
