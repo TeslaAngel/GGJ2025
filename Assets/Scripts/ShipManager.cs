@@ -200,6 +200,8 @@ public class ShipManager : MonoBehaviour
             BubbleCode[] bubbleCodes = GetComponentsInChildren<BubbleCode>();
             int bubbleIndex = Random.Range(0, bubbleCodes.Length);
             Destroy(bubbleCodes[bubbleIndex].gameObject);
+            CameraShake cameraShake = Camera.main.GetComponent<CameraShake>();
+            StartCoroutine(cameraShake.Shake(0.15f, 0.4f));
         }
     }
 }
