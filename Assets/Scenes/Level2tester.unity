@@ -202,7 +202,6 @@ GameObject:
   - component: {fileID: 51900744}
   - component: {fileID: 51900743}
   - component: {fileID: 51900746}
-  - component: {fileID: 51900748}
   - component: {fileID: 51900747}
   m_Layer: 0
   m_Name: Main Camera
@@ -341,20 +340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29e61d3b8fd78475ba8c7242a3b5cd8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &51900748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51900742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 628abd5966f2a469783dbba7126bca38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smoothness: 0
-  targetObject: {fileID: 8873960914696991387}
 --- !u!1001 &117641171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -818,6 +803,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 80088707502840335, guid: d6f979810146e474080e8527f854bee4,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 126
+      objectReference: {fileID: 0}
     - target: {fileID: 225619114724630463, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -868,6 +858,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
+        type: 3}
+      propertyPath: lightBubblePrefab
+      value: 
+      objectReference: {fileID: 2934384177742513648, guid: 3206a0ad141f15d42bbd28ffed57ab31,
+        type: 3}
+    - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
+        type: 3}
+      propertyPath: unstableAfterTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6940580797030752109, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
       propertyPath: m_Name
@@ -878,12 +879,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6f979810146e474080e8527f854bee4, type: 3}
---- !u!4 &8873960914696991387 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 225619114724630463, guid: d6f979810146e474080e8527f854bee4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8873960914696991386}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
