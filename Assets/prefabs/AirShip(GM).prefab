@@ -1226,7 +1226,7 @@ MonoBehaviour:
   turningRotationAngle: 45
   turningSpeed: 2
   switchLaneSpeed: 1
-  unstableAfterTime: 0
+  unstableAfterTime: 5
   lanePositions:
   - {x: -6, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
