@@ -33,7 +33,13 @@ public class BubbleCode : MonoBehaviour
     {
         //destroy the bubble when being hit by spiky enemy
     }
-    
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnDestroy()
     {
