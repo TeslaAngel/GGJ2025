@@ -183,4 +183,15 @@ public class ShipManager : MonoBehaviour
             unstableTimer = unstableAfterTime;
         }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Destroy(other.gameObject);
+            BubbleCode[] bubbleCodes = GetComponentsInChildren<BubbleCode>();
+            int bubbleIndex = Random.Range(0, bubbleCodes.Length);
+            Destroy(bubbleCodes[bubbleIndex].gameObject);
+        }
+    }
 }
