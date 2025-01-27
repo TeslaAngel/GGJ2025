@@ -9,13 +9,16 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKey("escape"))
         {
-            SceneManager.LoadScene("StartMenu");
+            Time.timeScale = 0;
+            Application.Quit();
+            //SceneManager.LoadScene("StartMenu");
         }
     }
 
     public void LoadGame ()
 	{
-		SceneManager.LoadScene(sceneToLoad);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneToLoad);
 	}
     public void QuitGame()
     {
