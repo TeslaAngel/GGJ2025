@@ -10,7 +10,5 @@ public class PropellerRotatior : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
-
-        AudioManager.Instance.PlaySfx(Sound.Propeller);
     }
 }
