@@ -42,6 +42,7 @@ public class CardSystem : MonoBehaviour, IPointerDownHandler
                         if (!hit.transform.GetComponent<EngineCode>().bubble)
                         {
                             hit.transform.GetComponent<EngineCode>().bubble = Instantiate(bubblePrefab, hit.transform.GetComponent<EngineCode>().bubblePlacer.position, hit.transform.GetComponent<EngineCode>().bubblePlacer.rotation, hit.transform);
+                            AudioManager.Instance.PlaySfx(Sound.BlowBubble);
                             Destroy(gameObject);
                         }
                     }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4cfb8b9f63b45d4a8dc510f850c7859, type: 3}
+  m_Name: SoundSheet
+  m_EditorClassIdentifier: 
+  soundDefines:
+  - sound: 1
+    clip: {fileID: 8300000, guid: b4204273264492c4a87c1501eb329a38, type: 3}
+  - sound: 2
+    clip: {fileID: 8300000, guid: 95d113e654b69d94e9f32b2d13d79e49, type: 3}
+  - sound: 3
+    clip: {fileID: 8300000, guid: c46cbb7707dbe644d92ac0fdfdda1af7, type: 3}
+  - sound: 4
+    clip: {fileID: 8300000, guid: 2a248591fa3728146ae36e637d4a4ead, type: 3}
+  - sound: 5
+    clip: {fileID: 8300000, guid: a5bf67b68e015a94f88a51495c022145, type: 3}

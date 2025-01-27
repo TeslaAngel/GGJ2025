@@ -39,5 +39,6 @@ public class BubbleCode : MonoBehaviour
     private void OnDestroy()
     {
         //release a special effect when being destroyed
+        AudioManager.Instance.PlaySfx(Sound.PopBubble);
     }
 }
