@@ -1019,6 +1019,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d60d3e3859a6244a359e2bcdedc94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 1195040335}
+  text: {fileID: 709310439}
+  activate: 0
+  gameTimer: 0
 --- !u!1001 &8873960914696991386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1077,6 +1081,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
+        type: 3}
+      propertyPath: rgbPanel
+      value: 
+      objectReference: {fileID: 1195040337}
     - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
       propertyPath: unstableAfterTime

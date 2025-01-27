@@ -26,6 +26,9 @@ public class ShipManager : MonoBehaviour
 
     private bool switchedLane = false; //use this to avoid continuous lane switch
 
+    [Space]
+    public RGBPanel rgbPanel;
+
     private void Start()
     {
         //put player in 0 or 1 lane (top or middle)
@@ -166,6 +169,11 @@ public class ShipManager : MonoBehaviour
             Rigidbody body = GetComponent<Rigidbody>();
             body.useGravity = true;
             body.constraints = RigidbodyConstraints.None;
+
+            if(rgbPanel && !rgbPanel.activate)
+            {
+                rgbPanel.activate = true;
+            } 
 
         }
         //swing
