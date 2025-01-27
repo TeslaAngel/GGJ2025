@@ -842,6 +842,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d60d3e3859a6244a359e2bcdedc94f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 1633826398}
+  text: {fileID: 2033922764}
+  activate: 0
+  gameTimer: 0
 --- !u!114 &1633826398
 MonoBehaviour:
   m_ObjectHideFlags: 0
