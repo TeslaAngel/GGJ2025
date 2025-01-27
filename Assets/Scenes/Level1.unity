@@ -1154,6 +1154,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6676066287370115876, guid: d6f979810146e474080e8527f854bee4,
+        type: 3}
+      propertyPath: rgbPanel
+      value: 
+      objectReference: {fileID: 1633826397}
     - target: {fileID: 6940580797030752109, guid: d6f979810146e474080e8527f854bee4,
         type: 3}
       propertyPath: m_Name
