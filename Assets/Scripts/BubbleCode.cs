@@ -29,18 +29,12 @@ public class BubbleCode : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //destroy the bubble when being hit by spiky enemy
-        Destroy(gameObject);
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            Destroy(gameObject);
-        }
-    }
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     //destroy the bubble when being hit by spiky enemy
+    //     Destroy(gameObject);
+    // }
+    
 
     private void OnDestroy()
     {
